@@ -9,18 +9,27 @@ This project is designed to enhance your skills in React by building an applicat
 ## 📈 Presentation: TBD by Instructor | Mandatory
 ## 📝 Project Requirements
 
-| ID    | Functional Requirement           | Description                                                                                                                           |
-|-------|----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| FR001 | Public GitHub Repository         | Store all code in a single public repo; do not add instructors as collaborators.                                                      |
-| FR002 | Incremental Development with PRs | Merge every change into main via Pull Requests.                                                                                       |
-| FR003 | Setup a New React Application    | Build a new React application from scratch using Vite.                                                                                |
-| FR004 | Habit Creation                   | Allow users to create new habits with custom names and set target goals for completion frequency. (e.g., drink water 8 times per day) |
-| FR005 | Habit Progress Counter           | Implement increment/decrement counter for each habit to track daily progress.                                                         |
-| FR006 | Total Progress Tracking          | Display overall progress across all habits, showing the completed habits and total habits for the day.                                |
-| FR007 | Completion Tracking              | Mark habits as complete by conditionally changing the style when the counter equals the set goal.                                     |
-| FR008 | State Management                 | Implement proper React state management using hooks for habits and goals                                                              |
-| FR009 | Local Storage Integration        | Persist habit data using browser’s local storage.                                                                                     |
-| FR010 | Responsive Design                | Ensure the application works well on both desktop and mobile devices.                                                                 |
+| ID    | Functional Requirement           | Description                                                                                                              |
+|-------|----------------------------------|--------------------------------------------------------------------------------------------------------------------------|
+| FR003 | Public GitHub Repository         | Keep all code in a single public repo; do not add instructors as collaborators.                                          |
+| FR004 | Incremental Development with PRs | Merge every change into main exclusively via Pull Requests.                                                              |
+| FR005 | React + Vite Front-End           | Scaffold and run the app with Vite using React.                                                                          |
+| FR006 | TailwindCSS Styling              | Style the UI with TailwindCSS (may augment with DaisyUI).                                                                |
+| FR007 | React Router Setup               | Configure routing with React Router, including protected routes.                                                         |
+| FR008 | State & Effects Management       | Use React hooks (useState, useEffect, etc.) to manage UI state and side-effects.                                         |
+| FR010 | Run Local Events API             | Clone, install and run the provided Events API locally for development.                                                  |
+| FR011 | Home Page – Event List           | Fetch events (GET /api/events) and render them as cards sorted chronologically.                                          |
+| FR012 | Event Card Navigation            | Clicking an event card navigates to /events/:id with React Router.                                                       |
+| FR013 | Event Details Page               | Fetch and display full event data by ID (GET /api/events/:id).                                                           |
+| FR014 | Sign-Up Page                     | Render registration form; send POST /api/users; on success redirect to Sign-In.                                          |
+| FR015 | Sign-In Page                     | Render login form; send POST /api/auth/login; on success store API token and redirect to Home.                           |
+| FR009 | API Key Persistence              | Store/retrieve the user’s API token in localStorage.                                                                     |
+| FR016 | Protected Route Layout           | Wrap routes that require authentication (e.g., Create Event) in a guard that redirects unauthenticated users to Sign-In. |
+| FR017 | Create Event Page                | Provide a form that sends POST /api/events with the token; block access and submission if no valid token.                |
+| FR018 | Token Injection in Requests      | Automatically attach the stored token to request headers                                                                 |
+| FR019 | Error Handling & Feedback        | Gracefully display API or network errors (e.g., auth failure, 404) to the user.                                          |
+| FR020 | Responsive Design                | Ensure the UI remains usable across mobile and desktop break-points.                                                     |
+| FR021 | Static-Site Deployment           | Build the React app and deploy the static output to Render.                                                              |
 
 ⚠️ API: [Head over to this repo](https://github.com/WebDev-WBSCodingSchool/events-api), follow the instructions for installing and running the app. You should have a working API running on your computer. The API is fully documented and you can even try some endpoints in the live documentation powered by [Swagger UI](https://swagger.io/tools/swagger-ui/). You’ll eventually learn how to create your very own RESTful APIs in the meantime, we got this.
 
