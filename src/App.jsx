@@ -1,6 +1,6 @@
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router";
 import { MainLayout } from "./layout"
-import { HomePage, SignUpPage, SignInPage, EventDetailPage, CreateEventPage } from "./pages" 
+import { HomePage, SignUpPage, SignInPage, EventDetailPage, CreateEventPage, ProfilePage } from "./pages" 
 import { Error404 } from "./components";
 
 
@@ -25,6 +25,10 @@ function App() {
         <Route
         path="/create"
         element={<CreateEventPage/>}
+        />
+        <Route
+        path="/profile"
+        element={<ProfilePage/>}
         />
         <Route path="*" element={<Error404 />} />
       </Route>

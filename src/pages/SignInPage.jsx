@@ -24,7 +24,7 @@ const SignInPage = () => {
             localStorage.setItem("token", response.data.token);
             navigate("/");
         } catch (error) {
-            alert(`Registration failed, ${error}`)
+            alert(`Sign in failed, ${error}`)
         }
     }
 

@@ -17,7 +17,7 @@ const SignUpPage = () => {
 const handleSignUp = async ({ email, password }) => {
     try {
         const response = await UserRegistrationCall({ email, password });
-        if (response === 200) {
+        if (response.status === 200) {
                 navigate("/signin")
         }
     } catch (error) {
