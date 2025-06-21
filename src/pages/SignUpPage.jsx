@@ -1,7 +1,5 @@
-import { useContext } from "react";
 import { useNavigate } from "react-router"
 import { UserForm } from "../components";
-import { AuthContext } from "../context";
 import { UserRegistrationCall } from "../api";
 
 const SignUpPage = () => {

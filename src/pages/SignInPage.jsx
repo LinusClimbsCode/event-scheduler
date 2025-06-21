@@ -21,7 +21,6 @@ const SignInPage = () => {
         try {
             const response = await UserLoginCall({ email, password });
             setUser(response.data.user);
-            localStorage.setItem("userID", response.data.user.id);
             localStorage.setItem("token", response.data.token);
             navigate("/");
         } catch (error) {
