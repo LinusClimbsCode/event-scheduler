@@ -2,7 +2,7 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import { MainLayout } from "./layout"
 import { HomePage, SignUpPage, SignInPage, EventDetailPage, CreateEventPage, ProfilePage } from "./pages" 
 import { Error404 } from "./components";
-import { AllEventCall } from "./api";
+import { AllEventCall, EventDetailCall } from "./api";
 
 
 
@@ -26,8 +26,11 @@ function App() {
         element={<SignInPage/>}
         />
         <Route
-        path="/events"
-        element={<EventDetailPage/>}
+          path="/events/:eventId"
+          loader={EventDetailCall} // <-- loader for specific event
+          hydrateFallbackElement={<>Loading. . .</>}
+          errorElement={<Error404 />}
+          element={<EventDetailPage />}
         />
         <Route
         path="/create"

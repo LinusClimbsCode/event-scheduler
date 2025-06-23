@@ -1,6 +1,11 @@
+import { EventDetails } from "../components";
+import { useLoaderData } from 'react-router';
+
 const EventDetailPage = () => {
+    const eventData = useLoaderData();
+
     return (
-        <>EventDetailPage</>
+        <EventDetails event={eventData.data} />
     )
 }
 
