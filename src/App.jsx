@@ -2,6 +2,7 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import { MainLayout } from "./layout"
 import { HomePage, SignUpPage, SignInPage, EventDetailPage, CreateEventPage, ProfilePage } from "./pages" 
 import { Error404 } from "./components";
+import { AllEventCall } from "./api";
 
 
 
@@ -9,7 +10,13 @@ function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route element={<MainLayout />}>
-        <Route index element={<HomePage />} />
+        <Route 
+        index
+        loader={AllEventCall}
+        hydrateFallbackElement={<>Loading. . .</>} 
+        errorElement={<Error404 />}
+        element={<HomePage />} 
+        />
         <Route
         path="/signup"
         element={<SignUpPage/>}
