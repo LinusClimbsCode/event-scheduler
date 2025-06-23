@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router';
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../context';
+import { LocationMap } from '../components';
 
 const EventDetails = ({ event }) => {
   const navigate = useNavigate();
@@ -41,10 +42,13 @@ const EventDetails = ({ event }) => {
   return (
     <div className="hero bg-base-200 min-h-screen">
       <div className="hero-content flex-col lg:flex-row-reverse">
-        <img
-          src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
-          className="max-w-sm rounded-lg shadow-2xl"
-        />
+        <div className="min-h-400px min-w-400px">
+          <LocationMap
+            latitude={event.latitude}
+            longitude={event.longitude}
+            popupText={event.title}
+          />
+        </div>
         <div>
           <h1 className="text-5xl font-bold">{event.title}</h1>
           <div className="grid grid-flow-col gap-5 text-center auto-cols-max">
@@ -56,7 +60,9 @@ const EventDetails = ({ event }) => {
             </div>
             <div className="flex flex-col">
               <span className="countdown font-mono text-5xl">
-                <span style={{ '--value': counter.hours }}>{counter.hours}</span>
+                <span style={{ '--value': counter.hours }}>
+                  {counter.hours}
+                </span>
               </span>
               hours
             </div>
@@ -75,7 +81,10 @@ const EventDetails = ({ event }) => {
           </div>
           <p className="py-6">{event.description}</p>
           {user ? (
+            <div>
             <button className="btn btn-primary">Update</button>
+            <button className="btn btn-error">Delete</button>
+            </div>
           ) : (
             <button className="btn btn-primary">
               Sign In (To Update Event)
