@@ -82,11 +82,11 @@ const EventDetails = ({ event }) => {
           <p className="py-6">{event.description}</p>
           {user ? (
             <div>
-            <button className="btn btn-primary">Update</button>
-            <button className="btn btn-error">Delete</button>
+            <button className="btn btn-primary" onClick={() => navigate('/create-event')}>Update</button>
+            <button className="btn btn-error" onClick={() => navigate('/')}>Delete</button>
             </div>
           ) : (
-            <button className="btn btn-primary">
+            <button className="btn btn-primary" onClick={() => navigate('/signin')}>
               Sign In (To Update Event)
             </button>
           )}
